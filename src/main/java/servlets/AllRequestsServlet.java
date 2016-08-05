@@ -17,7 +17,7 @@ public class AllRequestsServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         Map<String, Object> pageVariables = createPageVariables(req);
-
+        pageVariables.put("message" , "");
         resp.getWriter().println(PageGenerator.instance().getPage("page.html",pageVariables));
         resp.setStatus(HttpServletResponse.SC_OK);
     }
